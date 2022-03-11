@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación y transición</title>
+    <style type="text/css">
+        body{
+            background-color: burlywood;
+        }
+        .caixa img{
+            height: 100%;
+            width: auto;
+        }
+        .caixa{
+            position: relative;
+            height: 500px;
+            width: 500px;
+        }
+        .caixa header{
+            color: white;
+            position:absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .caixa_img{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .color{
+            position: absolute;
+            mix-blend-mode: multiply;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: burlywood;
+            transition: opacity 1s;
+        }
+        h2{
+            z-index: 2;
+            transition: font-size 1s;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        h2:hover{
+            font-size: 3em;
+        }
+        .caixa .color:hover{
+            opacity: 0;
+          
+        }
+        #helado{
+            position: absolute;
+            animation-name: helado;
+            animation-duration: 18s;
+            animation-iteration-count: infinite;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+        @keyframes helado {
+            0% {
+                top:0;
+                left:0;
+            }
+            10%{
+                top:10%;
+                left:100%;
+            }
+             35%{
+                top:100%;
+                left:60%;
+            }
+             75%{
+                top:50%;
+                left:15%;
+                }
+            100%{
+                top:0%;
+                left:0%;
+            }
+        }
+        @media only screen and (max-width: 1024px){
+            body{
+                background-color: khaki;
+            }
+            .caixa{
+                width: 50%;
+            }
+        }
+        @media only screen and (max-width: 600px){
+            body{
+                background-color: darkorange;
+            }
+            .caixa{
+                width: 100%;
+                height: 35%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <header>
+            <h2>ORANGE</h2>
+            <div class="color"></div>
+        </header>
+        <div class="caixa_img">
+            <img src="img/fun_vs_funny.jpg" alt="">
+        </div>
+    </div>
+    <img id="helado" src="img/e16892_9298694f41264f4f9967f39cf13317d2_mv2.gif" alt="">
+</body>
+</html>
